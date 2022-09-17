@@ -1,0 +1,27 @@
+[
+	{
+		"file": "D:\\SchoolProjects\\Bowling\\Source\\Bowling\\Bowling.Build.cs",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe\" @D:\\SchoolProjects\\Bowling\\.vscode\\compileCommands_Default\\Bowling.211.rsp",
+		"directory": "D:\\Misc. Programs\\UE5\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "D:\\SchoolProjects\\Bowling\\Source\\Bowling\\Bowling.cpp",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe\" @D:\\SchoolProjects\\Bowling\\.vscode\\compileCommands_Default\\Bowling.211.rsp",
+		"directory": "D:\\Misc. Programs\\UE5\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "D:\\SchoolProjects\\Bowling\\Source\\Bowling\\Bowling.h",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe\" @D:\\SchoolProjects\\Bowling\\.vscode\\compileCommands_Default\\Bowling.211.rsp",
+		"directory": "D:\\Misc. Programs\\UE5\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "D:\\SchoolProjects\\Bowling\\Source\\Bowling\\BowlingGameModeBase.cpp",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe\" @D:\\SchoolProjects\\Bowling\\.vscode\\compileCommands_Default\\Bowling.211.rsp",
+		"directory": "D:\\Misc. Programs\\UE5\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "D:\\SchoolProjects\\Bowling\\Source\\Bowling\\BowlingGameModeBase.h",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe\" @D:\\SchoolProjects\\Bowling\\.vscode\\compileCommands_Default\\Bowling.211.rsp",
+		"directory": "D:\\Misc. Programs\\UE5\\UE_5.0\\Engine\\Source"
+	}
+]
