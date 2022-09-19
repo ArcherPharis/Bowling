@@ -28,8 +28,6 @@ public:
 	UFUNCTION(BlueprintCallable)
 		int GetScore();
 
-	UFUNCTION(BlueprintCallable)
-		float GetPowerPercent();
 
 	void Timer();
 	FTimerHandle timerHandle;

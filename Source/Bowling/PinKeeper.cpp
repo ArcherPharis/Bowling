@@ -43,7 +43,7 @@ void APinKeeper::increaseScore()
 			score++;
 		}
 	}
-	currentscore = currentscore + score;
+	onScoreCollected.Broadcast(score);
 	
 
 

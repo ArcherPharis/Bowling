@@ -8,6 +8,8 @@
 
 class APin;
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnScoreCollected, int, newScore);
+
 UCLASS()
 class BOWLING_API APinKeeper : public AActor
 {
@@ -16,6 +18,7 @@ class BOWLING_API APinKeeper : public AActor
 public:	
 	// Sets default values for this actor's properties
 	APinKeeper();
+	FOnScoreCollected onScoreCollected;
 
 protected:
 	// Called when the game starts or when spawned
