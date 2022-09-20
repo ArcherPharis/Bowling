@@ -32,6 +32,7 @@ void UInGameUI::AddPlayer()
 
 	playerList->AddEntry(nameStr,gameMode->GetNumOfRounds());
 	gameMode->AddPlayer(nameStr);
+	atLeastOnePlayerAdded = true;
 }
 
 void UInGameUI::RemovePlayer()
@@ -45,10 +46,12 @@ void UInGameUI::RemovePlayer()
 
 void UInGameUI::StartGame()
 {
-
-	gameMode->StartingBowlingGame();
-	playerSettingRoot->SetVisibility(ESlateVisibility::Hidden);
-	playerList->GetEntry(0)->PlayerTurn();
+	if (atLeastOnePlayerAdded) 
+	{
+		gameMode->StartingBowlingGame();
+		playerSettingRoot->SetVisibility(ESlateVisibility::Hidden);
+		playerList->GetEntry(0)->PlayerTurn();
+	}
 
 
 

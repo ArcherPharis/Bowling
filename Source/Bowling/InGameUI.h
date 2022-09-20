@@ -36,7 +36,7 @@ private:
 	UPROPERTY(meta = (bindWidget))
 	class UEntryList* playerList;
 
-	
+	bool atLeastOnePlayerAdded = false;
 
 	UFUNCTION()
 	void AddPlayer();
