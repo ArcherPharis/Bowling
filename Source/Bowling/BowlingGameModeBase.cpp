@@ -40,6 +40,15 @@ void ABowlingGameModeBase::ScoreCollected(int score)
 	TArray<FString> keys;
 	playerScores.GenerateKeyArray(keys);
 	playerScores[keys[currentPlayerIndex]] = score;
+	if (score == 10)
+	{
+		onUpdateScore.Broadcast(currentPlayerIndex, "X", currentRound);
+	}
+	else
+	{
+		onUpdateScore.Broadcast(currentPlayerIndex, FString::FromInt(score), currentRound);
+	}
+
 	currentPlayerIndex++;
 	
 	if (currentPlayerIndex >= keys.Num()) //returns number of items in an array

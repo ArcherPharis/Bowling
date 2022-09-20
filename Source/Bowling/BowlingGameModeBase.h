@@ -7,6 +7,7 @@
 #include "BowlingGameModeBase.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnNextPlayerTurn, int, index);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FUpdateScore, int, index, FString, newScore, int, currentRound);
 UCLASS()
 class BOWLING_API ABowlingGameModeBase : public AGameModeBase
 {
@@ -18,6 +19,7 @@ public:
 	void RemovePlayer(const FString& playerName);
 
 	FOnNextPlayerTurn nextPlayerTurn;
+	FUpdateScore onUpdateScore;
 
 	FORCEINLINE int GetNumOfRounds() const { return numOfRounds; } //forcedinline makes it read here in the header, more performant
 

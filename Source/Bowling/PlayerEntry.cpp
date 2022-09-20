@@ -16,6 +16,7 @@ void UPlayerEntry::Init(const FString& name, int roundCount)
 		//this is a widget, not a userwidget, as in a whole class. needs to be spawned differently.
 		UTextBlock* newScoreText = WidgetTree->ConstructWidget<UTextBlock>();
 		scoresRoot->AddChild(newScoreText);
+		scores.Add(newScoreText);
 		newScoreText->SetText(FText::FromString("-"));
 	}
 }
@@ -23,6 +24,12 @@ void UPlayerEntry::Init(const FString& name, int roundCount)
 bool UPlayerEntry::IsForPlayer(const FString& name) const
 {
 	return nameText->GetText().ToString() == name;
+}
+
+void UPlayerEntry::UpdateScore(int index, FString newScore)
+{
+	scores[index]->SetText(FText::FromString(newScore));
+
 }
 
 void UPlayerEntry::PlayerTurn()

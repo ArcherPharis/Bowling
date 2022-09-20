@@ -36,6 +36,8 @@ private:
 	UPROPERTY(meta = (bindWidget))
 	class UEntryList* playerList;
 
+	
+
 	UFUNCTION()
 	void AddPlayer();
 
@@ -47,6 +49,9 @@ private:
 
 	UFUNCTION()
 	void PlayerTurnNoti(int index);
+
+	UFUNCTION()
+	void PlayerScoreUpdate(int index, FString newScore, int currentRound);
 
 	class ABowlingGameModeBase* gameMode;
 	

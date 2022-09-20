@@ -21,6 +21,7 @@ void UInGameUI::NativeConstruct()
 	if (gameMode)
 	{
 		gameMode->nextPlayerTurn.AddDynamic(this, &UInGameUI::PlayerTurnNoti);
+		gameMode->onUpdateScore.AddDynamic(this, &UInGameUI::PlayerScoreUpdate);
 	}
 }
 
@@ -44,10 +45,12 @@ void UInGameUI::RemovePlayer()
 
 void UInGameUI::StartGame()
 {
-	
+
 	gameMode->StartingBowlingGame();
 	playerSettingRoot->SetVisibility(ESlateVisibility::Hidden);
 	playerList->GetEntry(0)->PlayerTurn();
+
+
 
 }
 
@@ -56,5 +59,9 @@ void UInGameUI::PlayerTurnNoti(int index)
 		
 	playerList->ReturnToNormalColor();
 	playerList->GetEntry(index)->PlayerTurn();
-	
+}
+
+void UInGameUI::PlayerScoreUpdate(int index, FString newScore, int currentRound)
+{
+	playerList->GetEntry(index)->UpdateScore(currentRound, newScore);
 }

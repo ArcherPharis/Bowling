@@ -88,7 +88,7 @@ void ABowlerPlayer::Throw()
 	{
 		canFire = false;
 		ball->Launch(playerEye->GetForwardVector(), ballLaunchSpeed);
-		GetWorldTimerManager().SetTimer(timerHandle, this, &ABowlerPlayer::Timer, 10.0f, false);
+		GetWorldTimerManager().SetTimer(timerHandle, this, &ABowlerPlayer::Timer, 5.0f, false);
 	}
 	
 }
