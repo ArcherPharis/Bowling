@@ -6,13 +6,13 @@
 #include "Blueprint/UserWidget.h"
 #include "InGameUI.generated.h"
 
-/**
- * 
- */
+
 UCLASS()
 class BOWLING_API UInGameUI : public UUserWidget
 {
 	GENERATED_BODY()
+
+public:
 
 protected:
 	virtual void NativeConstruct() override;
@@ -44,6 +44,9 @@ private:
 
 	UFUNCTION()
 	void StartGame();
+
+	UFUNCTION()
+	void PlayerTurnNoti(int index);
 
 	class ABowlingGameModeBase* gameMode;
 	

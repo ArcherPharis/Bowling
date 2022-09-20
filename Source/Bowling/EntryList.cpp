@@ -42,3 +42,18 @@ void UEntryList::RemoveEntry(const FString& name)
 	entryToRemove->MarkAsGarbage();
 	
 }
+
+void UEntryList::ReturnToNormalColor()
+{
+	for (UPlayerEntry* entry : entries)
+	{
+		entry->PlayerWait();
+	}
+
+}
+
+UPlayerEntry* UEntryList::GetEntry(int index)
+{
+	return entries[index];
+}
+

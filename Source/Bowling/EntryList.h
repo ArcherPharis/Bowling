@@ -6,6 +6,8 @@
 #include "Blueprint/UserWidget.h"
 #include "EntryList.generated.h"
 
+
+class UPlayerEntry;
 UCLASS()
 class BOWLING_API UEntryList : public UUserWidget
 {
@@ -15,6 +17,9 @@ public:
 
 	void AddEntry(const FString& name, int roundCount);
 	void RemoveEntry(const FString& name);
+	void ReturnToNormalColor();
+	UPlayerEntry* GetEntry(int index);
+	
 
 
 private:
@@ -22,7 +27,7 @@ private:
 	class UVerticalBox* root;
 
 	UPROPERTY(EditDefaultsOnly, Category = "UI")
-	TSubclassOf<class UPlayerEntry> EntryClass;
+	TSubclassOf<UPlayerEntry> EntryClass;
 
 	UPROPERTY()
 	TArray<UPlayerEntry*> entries;

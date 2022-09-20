@@ -17,6 +17,8 @@ class BOWLING_API UPlayerEntry : public UUserWidget
 public:
 	void Init(const FString& name, int roundCount);
 	bool IsForPlayer(const FString& name) const;
+	void PlayerTurn();
+	void PlayerWait();
 
 private:
 	UPROPERTY(meta = (bindWidget))

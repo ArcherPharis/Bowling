@@ -41,7 +41,8 @@ void ABowlingGameModeBase::ScoreCollected(int score)
 	playerScores.GenerateKeyArray(keys);
 	playerScores[keys[currentPlayerIndex]] = score;
 	currentPlayerIndex++;
-	if (currentPlayerIndex > keys.Num()) //returns number of items in an array
+	
+	if (currentPlayerIndex >= keys.Num()) //returns number of items in an array
 	{
 		currentRound++;
 		currentPlayerIndex = 0;
@@ -50,6 +51,7 @@ void ABowlingGameModeBase::ScoreCollected(int score)
 			GameFinished();
 		}
 	}
+	nextPlayerTurn.Broadcast(currentPlayerIndex);
 
 	for (auto playerNameScore : playerScores)
 	{

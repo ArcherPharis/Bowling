@@ -5,6 +5,7 @@
 #include "Components/Button.h"
 #include "Components/EditableTextBox.h"
 #include "EntryList.h"
+#include "PlayerEntry.h"
 #include "Kismet/GameplayStatics.h"
 #include "BowlingGameModeBase.h"
 
@@ -16,6 +17,11 @@ void UInGameUI::NativeConstruct()
 	removePlayerButton->OnReleased.AddDynamic(this, &UInGameUI::RemovePlayer);
 	startButton->OnReleased.AddDynamic(this, &UInGameUI::StartGame);
 	gameMode = Cast<ABowlingGameModeBase>(UGameplayStatics::GetGameMode(this));
+
+	if (gameMode)
+	{
+		gameMode->nextPlayerTurn.AddDynamic(this, &UInGameUI::PlayerTurnNoti);
+	}
 }
 
 void UInGameUI::AddPlayer()
@@ -41,5 +47,14 @@ void UInGameUI::StartGame()
 	
 	gameMode->StartingBowlingGame();
 	playerSettingRoot->SetVisibility(ESlateVisibility::Hidden);
+	playerList->GetEntry(0)->PlayerTurn();
 
+}
+
+void UInGameUI::PlayerTurnNoti(int index)
+{
+		
+	playerList->ReturnToNormalColor();
+	playerList->GetEntry(index)->PlayerTurn();
+	
 }
